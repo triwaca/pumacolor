@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Imagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #logo{
+            display: block;
+            margin-top: 20px;
+            position: absolute;
+            top: 0px;
+            left: 20px;
+        }
+        #imagem {
+            display: block;
+            margin-top: 20px;
+            position: fixed;
+        }
+        #menu-flutuante {
+            position: absolute;
+            text-align: right;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #007BFF;
+            background-color: white;
+        }
+        #lateralInferior {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/lateral_preto.png);
+        }
+        #lateralFrontal {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/lateral_frontal.png);
+        }
+        #lateralFaixa {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/lateral_faixa.png);
+        }
+        #frontalCentral {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/frontal_central.png);
+        }
+        #frontalDetalhes {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/frontal_detalhes.png);
+        }
+        #frontalDupla {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/frontal_dupla.png);
+        }
+        #lateralSuperior {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/lateral_superior.png);
+        }
+        #rodas {
+            display: none;
+            margin-top: 20px;
+            position: fixed;
+            mask-image: url(images/rodas.png);
+        }
+        #by{
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 8;
+        }
+    </style>
+</head>
+<body>
+    <img id="imagem" src="images/prata.JPEG" alt="Puma GTS 1978">
+    <img id="lateralFaixa" src="" alt="">
+    <img id="lateralInferior" src="" alt="">
+    <img id="lateralFrontal" src="" alt="">
+    <img id="lateralSuperior" src="" alt="">
+    <img id="frontalDetalhes" src="" alt="">
+    <img id="frontalCentral" src="" alt="">
+    <img id="frontalDupla" src="" alt="">
+    <img id="rodas" src="" alt="">
+    <img id="logo" src="images/logoPuma.SVG" alt="Logo PUMA">
+    <p id="by">Criado por <a href="https://instagram.com/prof.daniel.chagas" target="_blank">@prof.daniel.chagas</a></p>
+    <div id="menu-flutuante">
+        <p>Cor do carro:
+        <select id="dropdown">
+            <option value="images/amarelo.JPEG">Amarelo</option>
+            <option value="images/branco.JPEG">Branco</option>
+            <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+            <option value="images/dourado.JPEG">Dourado</option>
+            <option value="images/laranja.JPEG">Laranja</option>
+            <option value="images/prata.JPEG" selected>Prata</option>
+            <option value="images/preto.JPEG">Preto</option>
+            <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+            <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Rodas:
+            <select id="dropdown_rodas">
+                <option value="images/amarelo.JPEG">Polidas</option>
+                <option value="images/branco.JPEG">Preto fosco</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG" selected>Cinza fosco</option>
+                <option value="images/preto.JPEG">Preto esmaltado</option>
+            </select></p>
+        <p>Lateral inferior
+        <select id="dropdown_lateral">
+            <option value="">Nenhum</option>
+            <option value="images/amarelo.JPEG">Amarelo</option>
+            <option value="images/branco.JPEG">Branco</option>
+            <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+            <option value="images/dourado.JPEG">Dourado</option>
+            <option value="images/laranja.JPEG">Laranja</option>
+            <option value="images/prata.JPEG">Prata</option>
+            <option value="images/preto.JPEG">Preto</option>
+            <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+            <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Lateral superior
+            <select id="dropdown_lateral_superior">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+            </select></p>
+        <p>Lateral frontal
+            <select id="dropdown_lateral_frontal">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Lateral faixa
+            <select id="dropdown_lateral_faixa">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Frontal central
+            <select id="dropdown_frontal_central">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Frontal detalhes laterais
+            <select id="dropdown_frontal_detalhes">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+        <p>Frontal faixa dupla
+            <select id="dropdown_frontal_dupla">
+                <option value="">Nenhum</option>
+                <option value="images/amarelo.JPEG">Amarelo</option>
+                <option value="images/branco.JPEG">Branco</option>
+                <option value="images/cinzaEscuro.JPEG">Cinza escuro</option>
+                <option value="images/dourado.JPEG">Dourado</option>
+                <option value="images/laranja.JPEG">Laranja</option>
+                <option value="images/prata.JPEG">Prata</option>
+                <option value="images/preto.JPEG">Preto</option>
+                <option value="images/pretoFosco.JPEG">Preto Fosco</option>
+                <option value="images/vermelho.JPEG">Vermelho</option>
+        </select></p>
+    </div>
+    
+    <script>
+        document.getElementById('dropdown').addEventListener('change', function() {
+            var imagem = document.getElementById('imagem');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_rodas').addEventListener('change', function() {
+            var imagem = document.getElementById('rodas');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_lateral').addEventListener('change', function() {
+            var imagem = document.getElementById('lateralInferior');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_lateral_superior').addEventListener('change', function() {
+            var imagem = document.getElementById('lateralSuperior');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_lateral_frontal').addEventListener('change', function() {
+            var imagem = document.getElementById('lateralFrontal');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_lateral_faixa').addEventListener('change', function() {
+            var imagem = document.getElementById('lateralFaixa');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_frontal_central').addEventListener('change', function() {
+            var imagem = document.getElementById('frontalCentral');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_frontal_detalhes').addEventListener('change', function() {
+            var imagem = document.getElementById('frontalDetalhes');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+        document.getElementById('dropdown_frontal_dupla').addEventListener('change', function() {
+            var imagem = document.getElementById('frontalDupla');
+            var selectedValue = this.value;
+            if (selectedValue) {
+                imagem.src = selectedValue;
+                imagem.style.display = 'block';
+            } else {
+                imagem.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
